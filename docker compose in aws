@@ -1,0 +1,26 @@
+#Install docker compose:
+ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ sudo chmod +x /usr/local/bin/docker-compose
+
+#Build in docker compose (using docker-compose-yml file):
+ cd ~/environment
+ docker-compose build
+
+#Launch containers & check their status:
+ docker-compose up -d
+ docker-compose ps
+
+#See directory service, AWS CLI, Flask/frontend, and DynamoDB containers
+#Access directory frontend container:
+ docker-compose exec directory-frontend bash
+
+#Run this inside containers:
+ ps -x
+ exit
+
+#View app frontend by selecting "preview" then "preview running application"
+#To view logs from frontend container:
+ docker-compose logs directory-frontend
+
+#Stop docker resources:
+ docker-compose down
